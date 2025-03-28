@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 72 100% 49%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 72 100% 49%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 72 100% 49%;
+
+    --radius: 0.5rem;
+    --neon: 72 100% 49%; /* HSL for #c5fa00 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-black text-foreground antialiased;
+    background-image: 
+      radial-gradient(rgba(197, 250, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 1));
+    background-size: 30px 30px, 100% 100%;
+    background-position: 0 0, 0 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+
+  p {
+    @apply font-sans text-gray-300;
+  }
+
+  /* Neon text effect for primary elements */
+  .text-neon {
+    text-shadow: 0 0 5px rgba(197, 250, 0, 0.5), 0 0 10px rgba(197, 250, 0, 0.3);
+    color: #c5fa00; /* Explicitly set neon text color */
+  }
+
+  .border-neon {
+    box-shadow: 0 0 5px rgba(197, 250, 0, 0.5), 0 0 10px rgba(197, 250, 0, 0.3);
+    border-color: #c5fa00;
+  }
+
+  .highlight {
+    position: relative;
+    display: inline-block;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(197, 250, 0, 0.2);
+    z-index: -1;
+  }
+
+  /* Card hover effect */
+  .service-card {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(197, 250, 0, 0.2);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f0f0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+}
